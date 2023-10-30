@@ -1,0 +1,22 @@
+version: "3"
+services:
+ 
+  backend:
+    build:
+      context: ./midProject
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "8000:8000"
+   
+
+  frontend:
+    build:
+      context: ./react-introduction 
+      dockerfile: Dockerfile # Replace with the path to your frontend Dockerfile and source code
+    container_name: frontend
+    ports:
+      - "5173:5173"
+
+networks:
+  my-network:
